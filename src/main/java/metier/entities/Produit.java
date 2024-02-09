@@ -20,6 +20,11 @@ public class Produit implements Serializable {
 		this.quantite = quantite;
 	}
 
+	@Override
+	public String toString() {
+		return "Produit [id=" + id + ", designation=" + designation + ", prix=" + prix + ", quantite=" + quantite + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}

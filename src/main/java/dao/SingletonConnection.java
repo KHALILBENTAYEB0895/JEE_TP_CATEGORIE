@@ -18,4 +18,4 @@ public class SingletonConnection {
 	public static Connection getConnection() {
 		return connection;
 	}
-}
+} 
