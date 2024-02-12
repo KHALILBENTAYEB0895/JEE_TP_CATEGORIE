@@ -13,7 +13,7 @@
 		      <div class="card-body">
 		        <form action="chercher.do" method="get">
 		       		<label class="fw-bold">Mot Cle:</label>
-		       		<input type="text" name="motCle"/>
+		       		<input type="text" name="motCle" value="${model.motCle}"/>
 		       		<button type="submit" class="btn btn-primary">Chercher</button>
 		        </form>
 		        <table class="table table-striped">
