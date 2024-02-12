@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container mt-5">
 			<div class="card border-primary mb-3">
 		      <div class="card-header text-bg-primary">Liste des produits</div>
 		      <div class="card-body">
@@ -16,7 +16,7 @@
 		       		<input type="text" name="motCle"/>
 		       		<button type="submit" class="btn btn-primary">Chercher</button>
 		        </form>
-		        <table class="table">
+		        <table class="table table-striped">
 				  <thead>
 				    <tr>
 				      <th scope="col">ID</th>
