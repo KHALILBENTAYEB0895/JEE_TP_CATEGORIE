@@ -11,6 +11,8 @@ import metier.entities.Produit;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
+
 import dao.IProduitDao;
 import dao.ProduitDaoImpl;
 
@@ -39,6 +41,9 @@ public class ControleurServlet extends HttpServlet {
 			model.setProduits(produits);
 			request.setAttribute("model", model);
 			request.getRequestDispatcher("produits.jsp").forward(request, response);
+		}
+		else {
+			response.sendError(Response.SC_NOT_FOUND);
 		}
 	}
 	
