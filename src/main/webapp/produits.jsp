@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 	</head>
 	<body>
+	<%@ include file="header.jsp" %>
 		<div class="container mt-5">
 			<div class="card border-primary mb-3">
 		      <div class="card-header text-bg-primary">Liste des produits</div>
