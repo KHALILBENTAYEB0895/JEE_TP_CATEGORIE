@@ -42,9 +42,25 @@ public class ControleurServlet extends HttpServlet {
 			request.setAttribute("model", model);
 			request.getRequestDispatcher("produits.jsp").forward(request, response);
 		}
+		else if(path.equals("/saisie.do")) {
+			request.getRequestDispatcher("saisieProduit.jsp").forward(request, response);
+		}
+		else if(path.equals("saveProduit.do")&&(request.getMethod().equals("POST"))) {
+			String des = request.getParameter("designation");
+			double prix = Double.parseDouble(request.getParameter("prix"));
+			int quantite = Integer.parseInt("quantite");
+			Produit p = metier.save(new Produit(des, prix, quantite));
+			request.setAttribute("produit", p);
+			request.getRequestDispatcher("confirmation.jsp").forward(request, response);
+		}
 		else {
 			response.sendError(Response.SC_NOT_FOUND);
 		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 	
 }
