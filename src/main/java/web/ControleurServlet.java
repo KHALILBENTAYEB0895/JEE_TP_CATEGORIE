@@ -43,6 +43,7 @@ public class ControleurServlet extends HttpServlet {
 			request.getRequestDispatcher("produits.jsp").forward(request, response);
 		}
 		else if(path.equals("/saisie.do")) {
+			request.setAttribute("produit", new Produit());
 			request.getRequestDispatcher("saisieProduit.jsp").forward(request, response);
 		}
 		else if(path.equals("/saveProduit.do")&&(request.getMethod().equals("POST"))) {
