@@ -15,17 +15,17 @@
 		        <form action="saveProduit.do" method="post" >
 		        	<div class="mb-3">
 					  <label class="form-label">Designation</label>
-					  <input type="text" class="form-control" name="designation">
+					  <input type="text" class="form-control" name="designation" value="${produit.designation}">
 					  <span></span>
 					</div>
 					<div class="mb-3">
 					  <label class="form-label">Prix</label>
-					  <input type="text" class="form-control" name="prix">
+					  <input type="text" class="form-control" name="prix" value="${produit.prix}">
 					  <span></span>
 					</div>
 					<div class="mb-3">
 					  <label class="form-label">Quantite</label>
-					  <input type="text" class="form-control" name="quantite">
+					  <input type="text" class="form-control" name="quantite" value="${produit.quantite}">
 					  <span></span>
 					</div>
 					<button class="btn btn-primary" type="submit">Save</button>
