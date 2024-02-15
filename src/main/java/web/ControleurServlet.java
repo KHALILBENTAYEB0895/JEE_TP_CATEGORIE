@@ -54,6 +54,11 @@ public class ControleurServlet extends HttpServlet {
 			request.setAttribute("produit", p);
 			request.getRequestDispatcher("confirmation.jsp").forward(request, response);
 		}
+		else if(path.equals("/supprimer.do")) {
+			Long id =Long.parseLong(request.getParameter("id"));
+			metier.deleteProduit(id);
+			request.getRequestDispatcher("produits.jsp").forward(request, response);
+		}
 		else {
 			response.sendError(Response.SC_NOT_FOUND);
 		}
