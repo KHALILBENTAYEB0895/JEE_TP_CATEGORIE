@@ -24,7 +24,6 @@
 				      <th scope="col">Designation</th>
 				      <th scope="col">Prix</th>
 				      <th scope="col">Quantite</th>
-				      <th scope="col">Operation</th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -34,6 +33,10 @@
 				   		<td>${p.designation}</td>
 				   		<td>${p.prix}</td>
 				   		<td>${p.quantite}</td>
+				   		<td>
+					   		<a href="supprimer.do?id=${p.id}" class="btn btn-secondary"  >Supprimer</a>
+					   		<a href="modifier.do?id=${p.id}" class="btn btn-light" >Modifier</a>
+				   		</td>
 				   	</tr>
 				   </c:forEach> 
 				  </tbody>
