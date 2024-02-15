@@ -60,6 +60,25 @@ public class ControleurServlet extends HttpServlet {
 //			request.getRequestDispatcher("produits.jsp").forward(request, response);
 			response.sendRedirect("chercher.do?motCle=");
 		}
+		else if(path.equals("/editer.do")) {
+			Long id = Long.parseLong(request.getParameter("id"));
+			Produit p = metier.getProduit(id);
+			request.setAttribute("produit", p);
+			request.getRequestDispatcher("editerProduit.jsp").forward(request, response);
+		}
+		else if(path.equals("/updateProduit.do")&&(request.getMethod().equals("POST"))) {
+			Long id = Long.parseLong(request.getParameter("id"));
+			String des = request.getParameter("designation");
+			double prix = Double.parseDouble(request.getParameter("prix"));
+			int quantite = Integer.parseInt(request.getParameter("quantite"));
+			
+			Produit p = new Produit(des, prix, quantite);
+			p.setId(id);
+			metier.update(p);
+			request.setAttribute("produit", p);
+			request.getRequestDispatcher("confirmation.jsp").forward(request, response);
+			
+		}
 		else {
 			response.sendError(Response.SC_NOT_FOUND);
 		}
