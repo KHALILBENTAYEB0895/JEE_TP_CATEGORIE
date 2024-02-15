@@ -56,8 +56,9 @@ public class ControleurServlet extends HttpServlet {
 		}
 		else if(path.equals("/supprimer.do")) {
 			Long id =Long.parseLong(request.getParameter("id"));
-			metier.deleteProduit(id);
-			request.getRequestDispatcher("produits.jsp").forward(request, response);
+			metier.deleteProduit(id); 
+//			request.getRequestDispatcher("produits.jsp").forward(request, response);
+			response.sendRedirect("chercher.do?motCle=");
 		}
 		else {
 			response.sendError(Response.SC_NOT_FOUND);
