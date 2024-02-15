@@ -34,7 +34,7 @@
 				   		<td>${p.prix}</td>
 				   		<td>${p.quantite}</td>
 				   		<td>
-					   		<a href="supprimer.do?id=${p.id}" class="btn btn-secondary"  >Supprimer</a>
+					   		<a onclick="return confirm('Etes vous sure ?')" href="supprimer.do?id=${p.id}" class="btn btn-secondary"  >Supprimer</a>
 					   		<a href="modifier.do?id=${p.id}" class="btn btn-light" >Modifier</a>
 				   		</td>
 				   	</tr>
