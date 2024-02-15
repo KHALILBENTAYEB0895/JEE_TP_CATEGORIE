@@ -61,14 +61,44 @@ public class ProduitDaoImpl implements IProduitDao {
 
 	@Override
 	public Produit getProduit(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Produit p = null;
+		Connection connection = SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = connection.prepareStatement
+					("SELECT * FROM PRODUIT WHERE ID=?");
+			ps.setLong(1,id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				p = new Produit();
+				p.setId(rs.getLong("ID"));
+				p.setDesignation(rs.getString("DESIGNATION"));
+				p.setPrix(rs.getDouble("PRIX"));
+				p.setQuantite(rs.getInt("QUANTITE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return p;
 	}
 
 	@Override
-	public Produit update(Produit P) {
-		// TODO Auto-generated method stub
-		return null;
+	public Produit update(Produit p) {
+		Connection connection = SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = connection.prepareStatement
+					("UPDATE PRODUIT SET  DESIGNATION=?,PRIX=?,QUANTITE=? WHERE ID=?");
+			ps.setString(1, p.getDesignation());
+			ps.setDouble(2, p.getPrix());
+			ps.setInt(3, p.getQuantite());
+			ps.setLong(4, p.getId());
+			ps.executeUpdate();
+			
+			ps.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return p;
 	}
 
 	@Override
