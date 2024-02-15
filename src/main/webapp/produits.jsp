@@ -35,7 +35,7 @@
 				   		<td>${p.quantite}</td>
 				   		<td>
 					   		<a onclick="return confirm('Etes vous sure ?')" href="supprimer.do?id=${p.id}" class="btn btn-secondary"  >Supprimer</a>
-					   		<a href="modifier.do?id=${p.id}" class="btn btn-light" >Modifier</a>
+					   		<a href="editer.do?id=${p.id}" class="btn btn-light" >Editer</a>
 				   		</td>
 				   	</tr>
 				   </c:forEach> 
